@@ -1,38 +1,168 @@
-.App {
+/* createing variables */
+
+:root {
+  --back-color: #025464;
+  --front-color: #E57C23;
+  --secondary-color: #F2F2F2;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  padding: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
   text-align: center;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.34);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar>h1 {
+  font-size: 21px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar>button {
+  padding: 10px;
+  border-style: none;
+  background-color: var(--back-color);
+  color: var(--secondary-color);
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--front-color);
+  color: var(--secondary-color);
+  z-index: 999;
 }
 
-.App-link {
-  color: #61dafb;
+
+.form label {
+  font-size: 14px;
+  margin-top: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.form input {
+  outline: none;
+  padding: 5px 10px;
+  width: 40%;
+}
+
+.form input[type="submit"] {
+  margin-top: 5px;
+  outline: none;
+  border: none;
+  background-color: var(--back-color);
+  color: var(--secondary-color);
+}
+
+
+.book-list {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.book-item {
+  width: 100%;
+  background-color: #E8AA42;
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--secondary-color);
+  font-weight: bold;
+  list-style: none;
+}
+
+.book-item>div {
+  color: var(--back-color);
+}
+
+.book-item>div span {
+  color: var(--secondary-color);
+}
+
+.book-item .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.book-item .buttons button {
+  padding: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--back-color);
+  color: var(--secondary-color);
+}
+
+
+
+@media only screen and (min-width: 768px) {
+  .navbar>h1 {
+    font-size: 30px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navbar>button {
+    font-size: 20px;
+  }
+
+  .form label,
+  input {
+    font-size: 20px;
+  }
+
+  .book-item {
+    width: 45%;
+  }
+
+  .book-item .buttons {
+    margin-top: 30px;
+  }
+
+  .book-item .buttons button {
+    font-size: 18px;
+  }
+
+}
+
+
+@media only screen and (min-width: 992px) {
+
+  .form input {
+    border: 1px solid var(--back-color);
+    border-radius: 5px;
+  }
+
+  .form input[type="submit"] {
+    cursor: pointer;
+  }
+
+  .book-item {
+    width: 30%;
   }
 }
